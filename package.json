@@ -1,0 +1,39 @@
+{
+  "name": "automation",
+  "version": "1.0.0",
+  "description": "Encore demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hugo Garcia",
+  "license": "ISC",
+
+
+ "devDependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cypress": "^12.14.0",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^3.4.0",
+    "ts-loader": "^9.4.3",
+    "@badeball/cypress-cucumber-preprocessor": "^17.1.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-reports.html"
+    },
+    "messages": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-reports.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-reports.json"
+    }
+  }
+}
+
